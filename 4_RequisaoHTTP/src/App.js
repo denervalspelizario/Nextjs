@@ -21,7 +21,7 @@ export default function App(){
       .then((resultado) => resultado.json()) // deu certo acessou a api tranforma ela em json
       .then((json) => { // json contem todos os dados da api
         
-        setNutri(json)
+        setNutri(json) // jpga todos os dados que estão no json na state nutri
 
       })
     }
@@ -38,8 +38,8 @@ export default function App(){
         <h1 className='titulo'>React Nutri</h1>
       </header>
 
-      {nutri.map((item) => {
-
+      {nutri.map((item) => {  // atravez da funcao map percorre todos os dados que estão que estao na nutri(lembrar que nutri recebeu dados da api) depois joga em item
+                              // e atravez de item conseguimos acessar todos os dados     
         return(
 
           <article key={item.id} className='post'>
@@ -53,6 +53,7 @@ export default function App(){
               {item.subtitulo}
             </p>
 
+            <h2>Categoria: {item.categoria}</h2>
             <a className='botao'> Acessar </a>
 
 
